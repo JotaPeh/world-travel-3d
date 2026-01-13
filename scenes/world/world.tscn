@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7t5vtolb1vc2"]
+
+[ext_resource type="Script" uid="uid://17yemdrdp5bc" path="res://addons/zylann.hterrain/hterrain.gd" id="1_1fp7r"]
+[ext_resource type="Resource" uid="uid://bicyfeqmk5hty" path="res://terrains/data.hterrain" id="2_1fp7r"]
+[ext_resource type="Script" uid="uid://8a6qda7mi77g" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="3_v5dby"]
+
+[sub_resource type="Resource" id="Resource_t5ptc"]
+script = ExtResource("3_v5dby")
+mode = 0
+textures = [[], []]
+
+[node name="World" type="Node3D"]
+
+[node name="Chunk1" type="Node3D" parent="."]
+script = ExtResource("1_1fp7r")
+centered = true
+_terrain_data = ExtResource("2_1fp7r")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_t5ptc")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+metadata/_custom_type_script = "uid://17yemdrdp5bc"
